@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Clock</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="clock">
+        <div class="clock-face">
+            <div class="hand hour-hand"></div>
+            <div class="hand min-hand"></div>
+            <div class="hand sec-hand"></div>
+        </div>
+    </div>
+
+    <script>
+        const secondHand = document.querySelector('.sec-hand');
+        const minHand = document.querySelector('.min-hand');
+        const hourHand = document.querySelector('.hour-hand');
+
+        function setDate() {
+            const now = new Date();
+            const secs = now.getSeconds();
+            const mins = now.getMinutes();
+            let hrs = now.getHours();
+            if(hrs>12){
+                hrs -= 12;
+            }
+           
+            const secsInDegrees = (secs/60)*360 + 90;
+            const minsInDegrees = (mins/60)*360 + 90;
+            const hrsInDegrees = 0.5*(60*hrs + mins) + 90;
+            //console.log(secsInDegrees);
+            if(Number(secsInDegrees) > 444){
+                secondHand.setAttribute("Transform", "none");
+            }
+            secondHand.style.transform = `rotate(${secsInDegrees}deg)`;
+            minHand.style.transform = `rotate(${minsInDegrees}deg)`;
+            hourHand.style.transform = `rotate(${hrsInDegrees}deg)`;
+            
+        }
+        
+        setInterval(setDate , 1000);
+
+    </script>
+</body>
+</html>
