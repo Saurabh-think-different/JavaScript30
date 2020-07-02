@@ -1,0 +1,63 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-image: url(https://i.imgur.com/b9r5sEL.jpg);
+}
+
+.title{
+  text-align: center;
+  font-size: 3rem;
+  font-family: 'Bangers', cursive;
+  margin-top: 5rem;
+  color: #ff0800;
+  text-shadow: 0.23rem 0.2rem #b3ff00;
+  letter-spacing: 0.5rem;
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-underline-position: under;
+}
+
+
+
+.keys{
+  display: flex;
+  justify-content: space-evenly;
+  flex: 1;
+  margin-top: 10rem;
+  align-items: center;
+}
+.key{
+  border: 2px solid black;
+  padding: 1rem 0.5rem;
+  font-size: 1.5rem;
+  color: white;
+  border-radius: .5rem;
+  width: 8rem;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  text-shadow: 0 0 .5rem black;
+  transition: all .07s ease;
+}
+
+kbd{
+  display: block;
+  font-size: 4rem;
+}
+
+.playing{
+  transform: scale(1.1);
+  border: 1px solid orange;
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 1rem #ffc600;
+}
+
+.sound{
+  font-size: 1.1rem;
+  letter-spacing: 0.2rem;
+  color: #ffc600;
+}
+
